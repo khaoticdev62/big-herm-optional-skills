@@ -51,6 +51,7 @@ hermes skills install <raw-skill-url> --yes
 ```
 
 Then confirm the installed skill directory contains the expected `references/`, `scripts/`, `templates/`, or other companion files.
+
 ## Top 5 ready-to-copy install commands
 
 ```bash

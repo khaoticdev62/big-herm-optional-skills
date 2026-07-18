@@ -93,6 +93,7 @@ hermes skills install <raw-skill-url> --yes
 ```
 
 Then verify the installed skill directory actually contains the expected companion files.
+
 ## Clone the whole optional library
 
 ```bash
