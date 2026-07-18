@@ -1,0 +1,58 @@
+name: Release BIG HERM Optional Skills
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build release archives
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            TAG="${GITHUB_REF_NAME}"
+          else
+            TAG="manual-${GITHUB_RUN_NUMBER}"
+          fi
+          BASENAME="big-herm-optional-skills-${TAG}"
+          mkdir -p dist
+
+          git archive --format=zip --output="dist/${BASENAME}.zip" HEAD
+          git archive --format=tar HEAD | gzip > "dist/${BASENAME}.tar.gz"
+
+          cd dist
+          sha256sum "${BASENAME}.zip" "${BASENAME}.tar.gz" > SHA256SUMS.txt
+          ls -lah
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            TAG="${GITHUB_REF_NAME}"
+          else
+            TAG="manual-${GITHUB_RUN_NUMBER}"
+          fi
+          TITLE="BIG HERM Optional Skills ${TAG}"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+          else
+            gh release create "$TAG" dist/* --title "$TITLE" --generate-notes
+          fi

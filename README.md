@@ -36,7 +36,17 @@ For raw skill installs, use the raw GitHub URL to the pack's `SKILL.md`.
 Example:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
+```
+
+Top 5 ready-to-copy installs:
+
+```bash
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/research/research-paper-writing/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/p5js/SKILL.md
 ```
 
 Note: some skills include references, scripts, templates, tests, or workflows alongside `SKILL.md`. For those, cloning this repo locally is the safer path.

@@ -20,10 +20,20 @@ This is the best option when a pack ships with supporting files such as:
 Example:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 ```
 
 Use this when you only need one pack and the skill does not depend heavily on local companion files.
+
+## Top 5 ready-to-copy install commands
+
+```bash
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/research/research-paper-writing/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/p5js/SKILL.md
+```
 
 ## Recommended first packs
 
