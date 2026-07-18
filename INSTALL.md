@@ -24,7 +24,7 @@ Verified testing on Hermes Agent `v0.18.2` showed that some URL-installed skills
 Example:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/ascii-video/SKILL.md
 ```
 
 Use raw install only when:
@@ -63,15 +63,17 @@ hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-op
 
 These two installed successfully from raw URL without `--force` in fresh `--no-skills` test profiles.
 
-## Top 5 ready-to-copy install commands
+## First ready-to-copy install commands
 
 ```bash
-# convenient, but clone-first is safer for heavyweight packs
+# verified raw-safe smoke tests first
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/ascii-video/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/manim-video/SKILL.md
+
+# heavyweight packs: clone-first recommended
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/research/research-paper-writing/SKILL.md
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/p5js/SKILL.md
 ```
 
 ## Recommended first packs

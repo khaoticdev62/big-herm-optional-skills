@@ -52,7 +52,31 @@ After testing every optional pack currently in this repo, I found 2 packs that i
 
 I tested all currently published optional packs and did not find a third raw-safe pack in this repo state.
 
-Issue draft for the Hermes raw URL installer behavior lives at `docs/HERMES-RAW-URL-INSTALLER-BUG-DRAFT.md`.
+## Full tested optional-pack matrix
+
+Verified on 2026-07-18 against all 17 currently published optional packs in this repo using Hermes Agent `v0.18.2` raw-URL `inspect` plus raw-URL `install --yes` checks.
+
+| Pack | `inspect` | Raw install | Failure type | Current label | Verified note |
+|---|---|---|---|---|---|
+| `creative/ascii-video` | yes | installed | none | raw-safe | Installed `SKILL.md` plus 8 `references/*.md` companion files |
+| `creative/baoyu-infographic` | yes | failed | fetch/path failure | clone-only | Raw URL install failed with generic `Could not fetch '<raw-skill-url>' from any source` |
+| `creative/comfyui` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `creative/manim-video` | yes | installed | none | raw-safe | Installed `SKILL.md`, 14 `references/*.md` files, and `scripts/setup.sh` |
+| `creative/p5js` | yes | failed | fetch/path failure | clone-only | Raw URL install failed with generic `Could not fetch '<raw-skill-url>' from any source` |
+| `creative/popular-web-designs` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `creative/touchdesigner-mcp` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `mlops/evaluation/lm-evaluation-harness` | yes | blocked | scanner block (`CAUTION`) | clone-only | Hermes security scan blocked the community raw install with `CAUTION` verdict |
+| `mlops/evaluation/weights-and-biases` | yes | blocked | scanner block (`CAUTION`) | clone-only | Hermes security scan blocked the community raw install with `CAUTION` verdict |
+| `mlops/huggingface-hub` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `mlops/inference/llama-cpp` | yes | blocked | scanner block (`CAUTION`) | clone-only | Hermes security scan blocked the community raw install with `CAUTION` verdict |
+| `mlops/inference/vllm` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `mlops/models/audiocraft` | yes | blocked | scanner block (`CAUTION`) | clone-only | Hermes security scan blocked the community raw install with `CAUTION` verdict |
+| `mlops/models/segment-anything` | yes | failed | fetch/path failure | clone-only | Raw URL install failed with generic `Could not fetch '<raw-skill-url>' from any source` |
+| `productivity/google-workspace` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan blocked the community raw install with `DANGEROUS` verdict |
+| `productivity/powerpoint` | yes | failed | fetch/path failure | clone-only | Raw URL install failed with generic `Could not fetch '<raw-skill-url>' from any source` |
+| `research/research-paper-writing` | yes | failed | fetch/path failure | clone-only | Raw URL install failed with generic `Could not fetch '<raw-skill-url>' from any source` |
+
+Filed upstream as Hermes issue `NousResearch/hermes-agent#66760`. Local draft/source text still lives at `docs/HERMES-RAW-URL-INSTALLER-BUG-DRAFT.md`.
 
 ## Install one pack
 
@@ -65,18 +89,20 @@ Use raw install only as a convenience path for simpler packs or after you have p
 Example raw install:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/ascii-video/SKILL.md
 ```
 
-Top 5 optional packs from this repo:
+First copy-paste raw examples from this repo:
 
 ```bash
-# convenient, but not guaranteed for heavyweight packs
+# verified raw-safe smoke tests first
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/ascii-video/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/manim-video/SKILL.md
+
+# flagship heavyweight packs: clone-first recommended
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/research/research-paper-writing/SKILL.md
-hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/p5js/SKILL.md
 ```
 
 Clone-first is the safer path whenever a pack includes `references/`, `scripts/`, `templates/`, tests, workflows, or other companion files.
