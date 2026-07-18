@@ -76,6 +76,13 @@ hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-op
 
 ## Recommended first packs
 
+If you want the easiest raw-URL smoke tests first, start with:
+
+- `creative/ascii-video`
+- `creative/manim-video`
+
+If you want the flagship heavyweight packs, use clone-first:
+
 - `creative/comfyui`
 - `productivity/powerpoint`
 - `productivity/google-workspace`
