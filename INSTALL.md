@@ -17,17 +17,26 @@ This is the best option when a pack ships with supporting files such as:
 
 ## Option 2: install a single skill from GitHub raw
 
+This is a convenience path, not the safest default for heavyweight packs.
+
+Verified testing on Hermes Agent `v0.18.2` showed that some URL-installed skills succeed, but several heavier packs fail when their `SKILL.md` references companion paths that the raw URL installer cannot fetch cleanly.
+
 Example:
 
 ```bash
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 ```
 
-Use this when you only need one pack and the skill does not depend heavily on local companion files.
+Use raw install only when:
+
+- you only need one pack
+- the pack is relatively simple
+- or you have already verified that this exact pack installs cleanly from raw URL
 
 ## Top 5 ready-to-copy install commands
 
 ```bash
+# convenient, but clone-first is safer for heavyweight packs
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md

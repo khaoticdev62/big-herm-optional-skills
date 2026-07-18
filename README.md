@@ -31,17 +31,22 @@ See `MANIFEST.md` for the canonical inventory.
 
 ## Install one pack
 
-For raw skill installs, use the raw GitHub URL to the pack's `SKILL.md`.
+Recommended default for heavyweight packs: clone this repo first.
 
-Example:
+Why: raw `hermes skills install https://.../SKILL.md` works for some URL-sourced skills, but verified testing on Hermes Agent `v0.18.2` showed several heavier packs fail when their `SKILL.md` references companion paths that Hermes cannot fetch cleanly from the raw URL flow.
+
+Use raw install only as a convenience path for simpler packs or after you have personally verified that pack installs cleanly.
+
+Example raw install:
 
 ```bash
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 ```
 
-Top 5 ready-to-copy installs:
+Top 5 optional packs from this repo:
 
 ```bash
+# convenient, but not guaranteed for heavyweight packs
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/comfyui/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/powerpoint/SKILL.md
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/productivity/google-workspace/SKILL.md
@@ -49,7 +54,7 @@ hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-op
 hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/p5js/SKILL.md
 ```
 
-Note: some skills include references, scripts, templates, tests, or workflows alongside `SKILL.md`. For those, cloning this repo locally is the safer path.
+Clone-first is the safer path whenever a pack includes `references/`, `scripts/`, `templates/`, tests, workflows, or other companion files.
 
 ## Clone the whole optional library
 
