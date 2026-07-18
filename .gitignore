@@ -1,0 +1,20 @@
+# Ignore machine-local and runtime junk
+.env
+.env.*
+!.env.EXAMPLE
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+.venv/
+venv/
