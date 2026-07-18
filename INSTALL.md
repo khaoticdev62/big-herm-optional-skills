@@ -52,6 +52,17 @@ hermes skills install <raw-skill-url> --yes
 
 Then confirm the installed skill directory contains the expected `references/`, `scripts/`, `templates/`, or other companion files.
 
+## Currently verified raw-safe examples
+
+Verified on 2026-07-18 with Hermes Agent `v0.18.2`:
+
+```bash
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/ascii-video/SKILL.md
+hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-optional-skills/main/skills/creative/manim-video/SKILL.md
+```
+
+These two installed successfully from raw URL without `--force` in fresh `--no-skills` test profiles.
+
 ## Top 5 ready-to-copy install commands
 
 ```bash

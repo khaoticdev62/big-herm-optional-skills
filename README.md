@@ -33,13 +33,24 @@ See `MANIFEST.md` for the canonical inventory.
 
 Verified on 2026-07-18 after switching this repo public and rerunning raw-URL tests on Hermes Agent `v0.18.2`.
 
-| Pack | `inspect` | Raw install | Current label | Verified reason |
-|---|---|---|---|---|
-| `creative/comfyui` | yes | blocked | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
-| `productivity/powerpoint` | yes | failed | clone-only | referenced companion file `scripts/office/soffice.py` returned 404 |
-| `productivity/google-workspace` | yes | blocked | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
-| `research/research-paper-writing` | yes | failed | clone-only | referenced companion file `scripts/make_figure2.py` returned 404 |
-| `creative/p5js` | yes | failed | clone-only | parser/fetch path hit bogus reference `references` -> 404 |
+| Pack | `inspect` | Raw install | Failure type | Current label | Verified reason |
+|---|---|---|---|---|---|
+| `creative/comfyui` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
+| `productivity/powerpoint` | yes | failed | fetch/path failure | clone-only | referenced companion file `scripts/office/soffice.py` returned 404 |
+| `productivity/google-workspace` | yes | blocked | scanner block (`DANGEROUS`) | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
+| `research/research-paper-writing` | yes | failed | fetch/path failure | clone-only | referenced companion file `scripts/make_figure2.py` returned 404 |
+| `creative/p5js` | yes | failed | fetch/path failure | clone-only | parser/fetch path hit bogus reference `references` -> 404 |
+
+## Verified raw-safe wins
+
+After testing every optional pack currently in this repo, I found 2 packs that installed successfully from the public raw URL path without needing `--force`:
+
+| Pack | `inspect` | Raw install | Failure type | Current label | Verified note |
+|---|---|---|---|---|---|
+| `creative/ascii-video` | yes | installed | none | raw-safe | Installed `SKILL.md` plus 8 `references/*.md` companion files |
+| `creative/manim-video` | yes | installed | none | raw-safe | Installed `SKILL.md`, 14 `references/*.md` files, and `scripts/setup.sh` |
+
+I tested all currently published optional packs and did not find a third raw-safe pack in this repo state.
 
 Issue draft for the Hermes raw URL installer behavior lives at `docs/HERMES-RAW-URL-INSTALLER-BUG-DRAFT.md`.
 
