@@ -29,6 +29,20 @@ This repo carries optional packs such as:
 
 See `MANIFEST.md` for the canonical inventory.
 
+## Current compatibility snapshot
+
+Verified on 2026-07-18 after switching this repo public and rerunning raw-URL tests on Hermes Agent `v0.18.2`.
+
+| Pack | `inspect` | Raw install | Current label | Verified reason |
+|---|---|---|---|---|
+| `creative/comfyui` | yes | blocked | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
+| `productivity/powerpoint` | yes | failed | clone-only | referenced companion file `scripts/office/soffice.py` returned 404 |
+| `productivity/google-workspace` | yes | blocked | clone-only | Hermes security scan returned `DANGEROUS`; install blocked |
+| `research/research-paper-writing` | yes | failed | clone-only | referenced companion file `scripts/make_figure2.py` returned 404 |
+| `creative/p5js` | yes | failed | clone-only | parser/fetch path hit bogus reference `references` -> 404 |
+
+Issue draft for the Hermes raw URL installer behavior lives at `docs/HERMES-RAW-URL-INSTALLER-BUG-DRAFT.md`.
+
 ## Install one pack
 
 Recommended default for heavyweight packs: clone this repo first.
