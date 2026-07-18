@@ -56,6 +56,27 @@ hermes skills install https://raw.githubusercontent.com/khaoticdev62/big-herm-op
 
 Clone-first is the safer path whenever a pack includes `references/`, `scripts/`, `templates/`, tests, workflows, or other companion files.
 
+## Private repo note
+
+Right now this companion repo is private.
+
+That means the raw GitHub URLs shown above are not a production-safe install path for other devices unless those devices have authenticated access that Hermes can actually use for the fetch. In practical terms, while this repo stays private, treat it as clone-only.
+
+## If this repo becomes public later
+
+If you later make `big-herm-optional-skills` public, retest raw installs before promoting them as safe defaults.
+
+Why: public visibility removes the private-repo 404 problem, but it does not guarantee every heavyweight pack will install cleanly from raw URL. Some packs may still fail if companion-file references inside `SKILL.md` do not resolve cleanly through Hermes' raw URL installer.
+
+Recommended future validation pass:
+
+```bash
+hermes skills inspect <raw-skill-url>
+hermes skills install <raw-skill-url> --yes
+```
+
+Then verify the installed skill directory actually contains the expected companion files.
+
 ## Clone the whole optional library
 
 ```bash

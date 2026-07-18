@@ -33,6 +33,25 @@ Use raw install only when:
 - the pack is relatively simple
 - or you have already verified that this exact pack installs cleanly from raw URL
 
+## Private repo note
+
+Right now `big-herm-optional-skills` is private.
+
+Because of that, the raw `raw.githubusercontent.com/.../SKILL.md` commands are not the primary cross-device path. While this repo stays private, treat optional-pack installs as clone-only unless you have a verified authenticated fetch path that works with Hermes.
+
+## If this repo becomes public later
+
+When or if you make the repo public, retest raw installs before calling them supported defaults.
+
+Minimum retest:
+
+```bash
+hermes skills inspect <raw-skill-url>
+hermes skills install <raw-skill-url> --yes
+```
+
+Then confirm the installed skill directory contains the expected `references/`, `scripts/`, `templates/`, or other companion files.
+
 ## Top 5 ready-to-copy install commands
 
 ```bash
