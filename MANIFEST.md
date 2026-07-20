@@ -3,6 +3,9 @@
 ## Creative
 
 - `creative/ascii-video` — ASCII video generation and media conversion workflows
+- `creative/ascii-lineart` — Stone Story style hand-drawn ASCII line-art + validator (monospace grid, immersion-safe)
+- `creative/ascii-animation` — Stone Story method ASCII animation engine (normalize, in-betweens, multi-tempo layers, terminal/HTML/GIF render)
+- `creative/pixel-art` — professional pixel-art studio (palette/tileset/character method + audit/prep/variations/sheet/dither toolkit)
 - `creative/baoyu-infographic` — infographic layouts and style systems
 - `creative/comfyui` — ComfyUI local/cloud image and video pipeline workflows
 - `creative/manim-video` — animation and explainer-video workflows
